@@ -47,7 +47,7 @@ class Store {
 		this.counter = this.counter + 1;
 		this.setState({
 			...this.state,
-			list: [...this.state.list, { code: this.counter, title: 'Новая запись' }]
+			list: [...this.state.list, { code: this.counter, title: 'Новая запись', selectItemCounter: 0 }]
 		});
 
 	};
@@ -68,11 +68,21 @@ class Store {
 	 * @param code
 	 */
 	selectItem(code) {
+
+		this.state.list.forEach(element => {
+			if (element.selected && element.code !== code) {
+				element.selected = false;
+			};
+		});
 		this.setState({
 			...this.state,
 			list: this.state.list.map(item => {
 				if (item.code === code) {
 					item.selected = !item.selected;
+					if (item.selected) {
+						item.selectItemCounter = item.selectItemCounter + 1;
+						item.title = `${item.title.split("|")[0]} | Выделяли ${item.selectItemCounter} раз`;
+					}
 				}
 				return item;
 			})
