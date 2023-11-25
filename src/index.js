@@ -6,13 +6,13 @@ import Store from './store.js';
 
 const store = new Store({
 	list: [
-		{ code: 1, title: 'Название элемента', selectItemCounter: 0 },
-		{ code: 2, title: 'Некий объект', selectItemCounter: 0 },
-		{ code: 3, title: 'Заголовок', selectItemCounter: 0 },
-		{ code: 4, title: 'Очень длинное название элемента из семи слов', selectItemCounter: 0 },
-		{ code: 5, title: 'Запись', selectItemCounter: 0 },
-		{ code: 6, title: 'Шестая запись', selectItemCounter: 0 },
-		{ code: 7, title: 'Седьмая запись', selectItemCounter: 0 },
+		{ code: 10, title: 'Название элемента', selectItemCounter: 0 },
+		{ code: 20, title: 'Некий объект', selectItemCounter: 0 },
+		{ code: 30, title: 'Заголовок', selectItemCounter: 0 },
+		{ code: 40, title: 'Очень длинное название элемента из семи слов', selectItemCounter: 0 },
+		{ code: 50, title: 'Запись', selectItemCounter: 0 },
+		{ code: 60, title: 'Шестая запись', selectItemCounter: 0 },
+		{ code: 70, title: 'Седьмая запись', selectItemCounter: 0 },
 	]
 });
 

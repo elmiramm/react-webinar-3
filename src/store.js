@@ -6,6 +6,11 @@ class Store {
 		this.state = initState;
 		this.listeners = []; // Слушатели изменений состояния
 		this.counter = initState.list.length;
+		initState.list.forEach(item => {
+			if (item.code > this.counter) {
+				this.counter = item.code;
+			}
+		})
 	}
 
 	/**
