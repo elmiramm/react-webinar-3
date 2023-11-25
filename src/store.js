@@ -81,7 +81,17 @@ class Store {
 					item.selected = !item.selected;
 					if (item.selected) {
 						item.selectItemCounter = item.selectItemCounter + 1;
-						item.title = `${item.title.split("|")[0]} | Выделяли ${item.selectItemCounter} раз`;
+
+						if ((item.selectItemCounter % 10 === 2 || item.selectItemCounter % 10 === 3 || item.selectItemCounter % 10 === 4)) {
+							if (item.selectItemCounter % 100 === 12 || item.selectItemCounter % 100 === 13 || item.selectItemCounter % 100 === 14) {
+								item.title = `${item.title.split("|")[0]} | Выделяли ${item.selectItemCounter} раз`;
+							} else {
+								item.title = `${item.title.split("|")[0]} | Выделяли ${item.selectItemCounter} разa`;
+							}
+						} else {
+							item.title = `${item.title.split("|")[0]} | Выделяли ${item.selectItemCounter} раз`;
+						}
+
 					}
 				}
 				return item;
