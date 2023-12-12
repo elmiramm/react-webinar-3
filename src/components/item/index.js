@@ -33,6 +33,7 @@ function Item(props) {
         many: 'раз'
       })}` : ''}
       </div>
+		<div className='Item-price'>{`${props.item.price} ₽`}</div>
       <div className='Item-actions'>
         <button onClick={callbacks.onDelete}>
           Удалить
@@ -47,7 +48,8 @@ Item.propTypes = {
     code: PropTypes.number,
     title: PropTypes.string,
     selected: PropTypes.bool,
-    count: PropTypes.number
+    count: PropTypes.number,
+	 price: PropTypes.string
   }).isRequired,
   onDelete: PropTypes.func,
   onSelect: PropTypes.func

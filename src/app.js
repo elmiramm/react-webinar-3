@@ -11,7 +11,7 @@ import PageLayout from "./components/page-layout";
  */
 function App({store}) {
 
-  const list = store.getState().list;
+  const {list, orders} = store.getState();
 
   const callbacks = {
     onDeleteItem: useCallback((code) => {
@@ -29,12 +29,14 @@ function App({store}) {
 
   return (
     <PageLayout>
-      <Head title='Приложение на чистом JS'/>
+      <Head title='Магазин'/>
       <Controls onAdd={callbacks.onAddItem}/>
       <List list={list}
             onDeleteItem={callbacks.onDeleteItem}
             onSelectItem={callbacks.onSelectItem}/>
+		<Modal orders={orders} />
     </PageLayout>
+	 
   );
 }
 
